@@ -85,18 +85,18 @@ In a good design that optimizes the network’s performance, servers are highly 
 
 Here’s a list of common dedicated servers:
 
-**File Server**   Stores and dispenses files
+**File Server**&emsp;&emsp;Stores and dispenses files
 
-**Mail Server**   The network’s post office; handles email functions
+**Mail Server**&emsp;&emsp;The network’s post office; handles email functions
 
-**Print Server**   Manages printers on the network 
+**Print Server**&emsp;&emsp;Manages printers on the network 
 
-**Web Server**   Manages web-based activities by running Hypertext Transfer Protocol Secure (HTTPS) for storing web content and accessing web pages
+**Web Server**&emsp;&emsp;Manages web-based activities by running Hypertext Transfer Protocol Secure (HTTPS) for storing web content and accessing web pages
 
-**Fax Server**   The “memo maker” that sends and receives paperless faxes over the network
+**Fax Server**&emsp;&emsp;The “memo maker” that sends and receives paperless faxes over the network
 
-**Application Server**   Manages network applications
+**Application Server**&emsp;&emsp;Manages network applications
 
-**Telephony Server**   Handles the call center and call routing and can be thought of as a sophisticated network answering machine
+**Telephony Server**&emsp;&emsp;Handles the call center and call routing and can be thought of as a sophisticated network answering machine
 
-**Proxy Server**   Handles tasks in the place of other machines on the network, particularly an Internet connection
+**Proxy Server**&emsp;&emsp;Handles tasks in the place of other machines on the network, particularly an Internet connection
