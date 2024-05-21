@@ -100,3 +100,4 @@ Here’s a list of common dedicated servers:
 **Telephony Server**&emsp;&emsp;Handles the call center and call routing and can be thought of as a sophisticated network answering machine
 
 **Proxy Server**&emsp;&emsp;Handles tasks in the place of other machines on the network, particularly an Internet connection
+
