@@ -119,3 +119,43 @@ One server can provide resources to what can sometimes be a huge number of indiv
 
 When people refer to hosts, they really can be referring to almost any type of networking devices—including workstations and servers.
 
+Usually, this term comes up when people are talking about resources and jobs that have to do with Transmission Control Protocol/Internet Protocol (TCP/IP).
+
+The scope of possible machines and devices is so broad because, in TCP/IP-speak, host means any network device with an IP address.
+
+The name host harks back to the Jurassic period of networking when those dinosaurs known as **mainframes** were the only intelligent devices able to roam the network. These were called **hosts** whether they had TCP/IP functionality or not.
+
+In that bygone age, everything else in the network-scape was referred to as **dumb terminals** because only mainframes—hosts—were given IP addresses.
+
+Another fossilized term from way back then is **gateways**, which was used to talk about any layer 3 machines like routers.
+
+#
+
+### Metropolitan Area Network
+
+A metropolitan area network (MAN) is just as it sounds, a network covering a metropolitan area used to interconnect various buildings and facilities usually over a carrier-provided network. 
+
+Think of a MAN as a concentrated WAN and you’ve got it. 
+
+MANs typically offer high-speed interconnections using in-ground fiber optics and can be very cost-effective for high-speed interconnects.
+
+#
+
+### Wide Area Network
+
+WAN networks are what we use to span large geographic areas and go the distance.
+
+Like the Internet, WANs usually employ both routers and public links, so that’s generally the criteria used to define them.
+
+Here’s a list of some of the important ways that WANs are different from LANs:
+
+- WANs usually need a router port or ports.
+
+- WANs span larger geographic areas and/or can link disparate locations.
+
+- WANs are usually slower.
+
+- We can choose when and how long we connect to a WAN. A LAN is all or nothing—our workstation is connected to it either permanently or not at all, although most of us have dedicated WAN links now.
+
+- WANs can utilize either private or public data transport media such as phone lines.
+
