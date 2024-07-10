@@ -101,3 +101,21 @@ Here’s a list of common dedicated servers:
 
 **Proxy Server**&emsp;&emsp;Handles tasks in the place of other machines on the network, particularly an Internet connection
 
+Servers are usually dedicated to doing one specific important thing within the network. Not always, though—sometimes they have more than one job
+
+They can maintain the network’s data integrity by backing up the network’s software and providing redundant hardware (for fault tolerance)
+
+Servers must have considerably superior CPUs, hard-drive space, and memory—a lot more than a simple client’s capacity—because they serve many client machines and provide any resources they require.
+
+You should always put your servers in a very secure area. they really pricey workhorses, they also store huge amounts of important and sensitive company data, so they need to be kept safe from any unauthorized access.
+
+![image](https://github.com/rw9999/Network-Plus-Notes/assets/134976895/ebd268c6-91e0-446f-adb9-5385139dc9de)
+
+One server can provide resources to what can sometimes be a huge number of individual users at the same time but workstations don’t
+
+#
+
+### Hosts
+
+When people refer to hosts, they really can be referring to almost any type of networking devices—including workstations and servers.
+
