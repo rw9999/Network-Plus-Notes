@@ -159,3 +159,166 @@ Here’s a list of some of the important ways that WANs are different from LANs:
 
 - WANs can utilize either private or public data transport media such as phone lines.
 
+We get the word Internet from the term **internetwork**. An internetwork is a type of LAN and/or WAN that connects a bunch of networks, or intranets.
+
+In an internetwork, hosts still use hardware addresses to communicate with other hosts on the LAN. However, they use logical addresses (IP addresses) to communicate with hosts on a different LAN (on the other side of the router).
+
+Routers are the devices that make this possible. Each connection into a router is a different logical network.
+
+The Internet is a prime example of what’s known as a **distributed WAN**—an internetwork that’s made up of a lot of interconnected computers located in a lot of different places.
+
+There’s another kind of WAN, referred to as **centralized**, that’s composed of a main, centrally located computer or location that remote computers and devices can connect to.
+
+![image](https://github.com/user-attachments/assets/9b35b531-4856-42e8-9ad9-cf2c26edb81c)
+
+#
+
+### Personal Area Network
+
+For close proximity connections there are PANs, or personal area networks.
+
+These are seen with smartphones and laptops in a conference room where local connections are used to collaborate and send data between devices.
+
+While a PAN can use a wired connection such as Ethernet or USB, it is more common that short-distance wireless connections are used such as Bluetooth, infrared, or ZigBee.
+
+PANs are intended for close proximity between devices such as connecting to a projector, printer, or a coworker’s computer, and they extend usually only a few meters.
+
+#
+
+### Campus Area Network
+
+A CAN, or campus area network, covers a limited geographical network such as a college or corporate campus.
+
+The CAN typically interconnects LANs in various buildings and offers a Wi-Fi component for roaming users.
+
+A campus area network is between a LAN and WAN in scope. They are larger than a local area network (LAN) but smaller than a metropolitan area network (MAN) or wide area network (WAN).
+
+Most CANs offer Internet connectivity as well as access to data center resources.
+
+#
+
+### Storage Area Network
+
+A storage area network (SAN) is designed for, and used exclusively by, storage systems.
+
+SANs interconnect servers to storage arrays containing centralized banks of hard drive or similar storage media.
+
+SANs are usually only found in data centers and do not mix traffic with other LANs. 
+
+The protocols are designed specifically for storage with Fibre Channel being the most prevalent along with iSCSI.
+
+The network hardware is different from LAN switches and routers and are designed specifically to carry storage traffic.
+
+#
+
+### Software-Defined Wide Area Network
+
+A software-defined wide area network (SDWAN) is a virtual WAN architecture that uses software to manage connectivity, devices, and services and can make changes in the network based on current operations.
+
+SDWANs integrate any type of transport architectures such as MPLS, LTE, and broadband Internet services to securely connect users to applications.
+
+The SDWAN controller can make changes in real-time to add or remove bandwidth or to route around failed circuits. 
+
+SDWANs can simplify wide area networking management and operations by decoupling the networking hardware from its control mechanism.
+
+#
+
+### Multiprotocol Label Switching
+
+The term Multiprotocol Label Switching (MPLS), as used in this chapter, will define the actual layout of what is one of the most popular WAN protocols in use today.
+
+MPLS has become one of the most innovative and flexible networking technologies on the market, and it has some key advantages over other WAN technologies:
+
+- Physical layout flexibility
+- 
+- Prioritizing of data
+
+- Redundancy in case of link failure
+
+- One-to-many connection
+
+MPLS is a switching mechanism that imposes labels (numbers) to data and then uses those labels to forward data when it arrives at the MPLS network
+
+![image](https://github.com/user-attachments/assets/cc4ca887-53b0-445a-b3c5-53787ab7af1f)
+
+The labels are assigned on the edge of the MPLS network, and forwarding inside the MPLS network (cloud) is done solely based on labels through virtual links instead of physical links.
+
+Prioritizing data is a huge advantage; for example, voice data could have priority over basic data based on the labels. And since there are multiple paths for the data to be forwarded through the MPLS cloud, there’s even some redundancy provided as well.
+
+#
+
+### Multipoint Generic Routing Encapsulation
+
+The Multipoint Generic Routing Encapsulation (mGRE) protocol refers to a carrier or service provider offering that dynamically creates and terminates connections to nodes on a network. 
+
+mGRE is used in Dynamic Multipoint VPN deployments. 
+
+The protocol enables dynamic connections without having to pre-configure static tunnel endpoints. 
+
+The protocol encapsulates user data, creates a VPN connection to one or many nodes, and when completed, tears down the connection.
+
+#
+
+### Peer-to-Peer Networks
+
+Computers connected together in peer-to-peer networks do not have any central, or special, authority—they’re all peers, meaning that when it comes to authority, they’re all equals.
+
+The authority to perform a security check for proper access rights lies with the computer that has the desired resource being requested from it.
+
+It also means that the computers coexisting in a peer-to-peer network can be client machines that access resources and server machines and provide those resources to other computers.
+
+This actually works pretty well as long as there isn’t a huge number of users on the network, if each user backs things up locally, and if your network doesn’t require much security.
+
+If your network is running Windows, macOS, or Linux in a local LAN workgroup, you have a peer-to-peer network.
+
+Keep in mind that peer-to-peer networks definitely present security-oriented challenges; for instance, just backing up company data can get pretty sketchy. Because security is not centrally governed, each and every user has to remember and maintain a list of users and passwords on each and every machine. Worse, some of those all-important passwords for the same users change on different machines—even for accessing different resources.
+
+![image](https://github.com/user-attachments/assets/c2ea7e14-1965-4a76-8d7b-fdaa511b5911)
+
+#
+
+### Client-Server Networks
+
+Client-server networks are pretty much the polar opposite of peer-to-peer networks because in them, a single server uses a network operating system for managing the whole network.
+
+A client machine’s request for a resource goes to the main server, which responds by handling security and directing the client to the desired resource. This happens instead of the request going directly to the machine with the desired resource, and it has some serious advantages.
+
+First, because the network is much better organized and doesn’t depend on users remembering where needed resources are, it’s a whole lot easier to find the files you need because everything is stored in one spot—on that special server.
+
+Your security also gets a lot tighter because all usernames and passwords are on that specific server, which is never ever used as a workstation.
+
+You even gain scalability—client- server networks can have legions of workstations on them. And surprisingly, with all those demands, the network’s performance is actually optimized.
+
+![image](https://github.com/user-attachments/assets/7d132682-f16a-43c6-9fb8-3c3ab0e42d0b)
+
+
+Many of today’s networks are hopefully a healthy blend of peer-to-peer and client-server architectures, with carefully specified servers that permit the simultaneous sharing of resources from devices running workstation operating systems.
+
+## Physical Network Topologies
+
+Just as a topographical map is a type of map that shows the shape of the terrain, the physical topology of a network is also a type of map.
+
+It defines the specific characteristics of a network, such as where all the workstations and other devices are located and the precise arrangement of all the physical media such as cables.
+
+On the other hand, the **logical topologies** we covered earlier delineate exactly how data moves through the network.
+
+Even though these two topologies are usually a lot alike, a particular network can actually have physical and logical topologies that are very different.
+
+What you want to remember is that a network’s physical topology gives you the lay of the land and the logical topology shows how a digital signal or data navigates through that layout.
+
+Here’s a list of the topologies you’re most likely to run into these days:
+
+- Bus
+- Star/hub-and-spoke
+- Ring
+- Mesh
+- Point-to-point
+- Point-to-multipoint
+- Hybrid
+
+#
+
+### Bus Topology
+
+
+
