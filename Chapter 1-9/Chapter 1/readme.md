@@ -320,5 +320,59 @@ Here’s a list of the topologies you’re most likely to run into these days:
 
 ### Bus Topology
 
+The bus topology consists of two distinct and terminated ends, with each of its computers connecting to one unbroken cable running its entire length.
 
+![image](https://github.com/user-attachments/assets/87a550a9-0dba-4d4f-ba43-d0f83e336a09)
+
+Even though all the computers on this kind of network see all the data flowing through the cable, only the one computer, which the data is specifically addressed to, actually gets the data.
+
+Some of the benefits of using a bus topology are that it’s easy to install and it’s not very expensive, partly because it doesn’t require as much cable as the other types of physical topologies.
+
+But it also has some drawbacks: For instance, it’s hard to troubleshoot, change, or move, and it really doesn’t offer much in the way of fault tolerance because everything is connected to that single cable. This means that any fault in the cable would basically bring the whole network down.
+
+Fault tolerance is the capability of a computer or a network system to respond to a condition automatically, often resolving it, which reduces the impact on the system. If fault-tolerance measures have been implemented correctly on a network, it’s highly unlikely that any of that network’s users will know that a problem ever existed at all.
+
+#
+
+### Star Topology
+
+A star (hub-and-spoke) topology’s computers are connected to a central point with their own individual cables or wireless connections.
+
+You’ll often find that central spot inhabited by a device like a hub, a switch, or an access point.
+
+Star topology offers a lot of advantages over bus topology, making it more widely used even though it obviously requires more physical media.
+
+One of its best features is that because each computer or network segment is connected to the central device individually, if the cable fails, it only brings down the machine or network segment related to the point of failure. This makes the network much more fault tolerant as well as a lot easier to troubleshoot.
+
+Another great thing about a star topology is that it’s a lot more scalable—all you have to do if you want to add to it is run a new cable and connect to the machine at the core of the star.
+
+![image](https://github.com/user-attachments/assets/2e0d0eb4-8575-4c94-b4a4-a95295e12a66)
+
+The hub device at the center of a star topology network that can give you the most grief if something goes wrong with it. If that central hub happens to fail, down comes the whole network.
+
+List of benefits:
+
+- New stations can be added or moved easily and quickly.
+
+- A single cable failure won’t bring down the entire network.
+
+- It’s relatively easy to troubleshoot.
+
+Disadvantages to using a star topology:
+
+- The total installation cost can be higher because of the larger number of cables, even though prices are becoming more competitive.
+
+- It has a single point of failure—the hub or other central device.
+
+There are two more sophisticated implementations of a star topology.
+
+The first is called a **point-to-point link**, where you have not only the device in the center of the spoke acting as a hub but also the device on the other end, which extends the network.
+
+Another refined version is the wireless version, but to understand this variety well, you’ve got to have a solid grasp of all the capabilities and features of any devices populating the wireless star topology.
+
+Know that access points are pretty much just wireless hubs or switches that behave like their wired counterparts. Basically, they create a point-by-point connection to endpoints and other wireless access points.
+
+#
+
+### Ring Topology
 
