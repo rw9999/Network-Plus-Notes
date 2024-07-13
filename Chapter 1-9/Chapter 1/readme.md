@@ -376,3 +376,100 @@ Know that access points are pretty much just wireless hubs or switches that beha
 
 ### Ring Topology
 
+In this type of topology, each computer is directly connected to other computers within the same network.
+
+The network’s data flows from computer to computer back to the source, with the network’s primary cable forming a ring.
+
+The problem is, the ring topology has a lot in common with the bus topology because if you want to add to the network, you have no choice but to break the cable ring, which is likely to bring down the entire network.
+
+![image](https://github.com/user-attachments/assets/ad3f7b1d-0a41-4070-838e-584afa3a8c15)
+
+This is one big reason that ring topology isn’t very popular—you just won’t run into it a lot as I did in the 1980s and early 1990s. It’s also pricey because you need several cables to connect each computer, it’s really hard to reconfigure, and as you’ve probably guessed, it’s not fault tolerant.
+
+If you work at an ISP, you may still find a physical ring topology in use for a technology called SONET or some other WAN technology. However, you just won’t find any LANs in physical rings anymore.
+
+#
+
+### Mesh Topology
+
+In this type of topology, you’ll find that there’s a path from every machine to every other one in the network.
+
+You won’t find it used in LANs very often, if ever, these days, but you will find a modified version of it known as a **hybrid mesh** used in a restrained manner on WANs, including the Internet.
+
+Often, hybrid mesh topology networks will have quite a few connections between certain places to create redundancy (backup). And other types of topologies can sometimes be found in the mix too, which is another reason it’s dubbed hybrid.
+
+Just remember that it isn’t a full- on mesh topology if there isn’t a connection between all devices in the network.
+
+![image](https://github.com/user-attachments/assets/b2e5bf4c-1add-4bd0-a4a1-df8eeae75342)
+
+You can clearly see that everything gets more and more complex as both the wiring and the connections multiply.
+
+For each n locations or hosts, you end up with n(n–1)/2 connections. This means that in a network consisting of only four computers, you have 4(4–1)/2, or 6 connections.
+
+That’s a huge amount of overhead, so only small networks can really use this topology and manage it well. On the bright side, you get a really nice level of fault tolerance, but mesh still isn’t used in corporate LANs anymore because they were so complicated to manage.
+
+A full mesh physical topology is least likely to have a collision, which happens when the data from two hosts trying to communicate simultaneously “collides” and gets lost.
+
+This is also the reason you’ll usually find the hybrid version in today’s WANs.
+
+In fact, the mesh topology is actually pretty rare now, but it’s still used because of the robust fault tolerance it offers.
+
+Because you have a multitude of connections, if one goes on the blink, computers and other network devices can simply switch to one of the many redundant connections that are up and running. And clearly, all that cabling in the mesh topology makes it a very pricey implementation.
+
+Plus, you can make your network management much less insane than it is with mesh by using what’s known as a partial mesh topology solution instead.
+
+You may lose a little fault tolerance, but if you go the partial mesh route, you still get to use the same technology between all the network’s devices. Just remember that with partial mesh, not all devices will be interconnected, so it’s very important to choose the ones that will be very wisely.
+
+#
+
+### Point-to-Point Topology
+
+As its name implies, in a point-to-point topology you have a direct connection between two routers or switches, giving you one communication path.
+
+The routers in a point-to-point topology can be linked by a serial cable, making it a physical network, or if they’re located far apart and connected only via a circuit within a Frame Relay or MPLS network, it’s a logical network instead.
+
+![image](https://github.com/user-attachments/assets/c534b1e2-bbc7-4bea-bfcc-f433f6be0903)
+
+The two round things radiating arrows represent our network’s two routers, and that lightning bolt represents a WAN link.
+
+Not very scalable.
+
+A link from a computer to a hub or switch is also a valid point-to- point connection. 
+
+A common version of this setup consists of a direct wireless link between two wireless bridges that’s used to connect computers in two different buildings together.
+
+#
+
+### Point-to-Multipoint Topology
+
+A point-to-multipoint topology consists of a succession of connections between an interface on one router and multiple destination routers—one point of connection to multiple points of connection.
+
+Each of the routers and every one of their interfaces involved in the point-to-multipoint connection are part of the same network.
+
+![image](https://github.com/user-attachments/assets/a804b218-a564-4377-b715-6cbca6b2faba)
+
+![image](https://github.com/user-attachments/assets/b1c690a0-1626-4fd7-a752-a0c468e3aa89)
+
+#
+
+### Hybrid Topology
+
+Hybrid topology means just that—a combination of two or more types of physical or logical network topologies working together within the same network.
+
+![image](https://github.com/user-attachments/assets/8013d246-4fee-49cf-add0-8450092b0d71)
+
+A simple hybrid network topology; it shows a LAN switch or hub in a star topology configuration that connects to its hosts via a bus topology.
+
+#
+
+### Selecting the Right Topology
+
+Ask the right questions.
+
+How much cash do you have?
+
+How much fault tolerance and security do you really need?
+
+Also, is this network likely to grow like a weed—will you need to quickly and easily reconfigure it often? In other words, how scalable does your network need to be?
+
+
