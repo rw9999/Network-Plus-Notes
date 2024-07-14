@@ -230,7 +230,7 @@ The term Multiprotocol Label Switching (MPLS), as used in this chapter, will def
 MPLS has become one of the most innovative and flexible networking technologies on the market, and it has some key advantages over other WAN technologies:
 
 - Physical layout flexibility
-- 
+  
 - Prioritizing of data
 
 - Redundancy in case of link failure
