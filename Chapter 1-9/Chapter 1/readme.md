@@ -470,6 +470,86 @@ How much cash do you have?
 
 How much fault tolerance and security do you really need?
 
-Also, is this network likely to grow like a weed—will you need to quickly and easily reconfigure it often? In other words, how scalable does your network need to be?
+How scalable does your network need to be?
 
+Here’s a list of things to keep in mind when you’re faced with coming up with the right topology for the right network:
 
+- Cost
+- Ease of installation
+- Ease of maintenance
+- Fault-tolerance requirement
+- Security requirement
+
+#
+
+### The Network Backbone
+
+Today’s networks can get pretty complicated, so we need to have a standard way of communicating with each other intelligibly about exactly which part of the network we’re referencing.
+
+This is the reason we divide networks into different parts called **backbones** and **segments**.
+
+![image](https://github.com/user-attachments/assets/a2acdc0f-b66b-4976-81a4-dffce7fc4113)
+
+The network backbone is what all the network segments and servers connect to and what gives the network its structure.
+
+The backbone must use some kind of seriously fast, robust technology—often Gigabit Ethernet.
+
+And to optimize network performance—its speed and efficiency—it follows that you would want to connect all of the network’s servers and segments directly to the network’s backbone.
+
+#
+
+### Network Segments
+
+When we refer to a segment, we can mean any small section of the network that may be connected to, but isn’t actually a piece of, the backbone.
+
+The network’s workstations and servers organized into segments connect to the network backbone, which is the common connecting point for all segments.
+
+#
+
+### Service-Related Entry Points
+
+In the networking world, there are clearly defined boundaries where one entity hands off a connection to another. 
+
+These are common when connecting to a service provider’s or carrier’s WAN circuit. 
+
+The service entry point defines the point of responsibility.
+
+The common term used is the **demarcation point**, or **demarc** for short. 
+
+A carrier will usually terminate with a piece of equipment called a **smart jack** that allows them to run diagnostics up to the physical point where the customer’s network connects.
+
+#
+
+### Service Provider Links
+
+Service providers are Internet service providers and cable and telephone companies that provide networking services.
+
+There are many different technologies used to provide these services such as satellite links for earth station to satellite connections.
+
+Traditional telephone companies may have extensive copper connections to homes and businesses that use Digital Subscriber Lines, or DSL, to provide last hop high speed digital services. DSL used to be a popular method to connect to the Internet and a solid alternative to cable or fiber connections.
+
+Cable companies now offer data and Internet services over their hybrid fiber/coax networks in additional to their traditional video offerings.
+
+A cable modem is installed at the customer’s site and provides data, video, and voice services off the cable network.
+
+Another common link is the **leased line**. When the provider installs a leased line, it is either a copper or fiber termination that interconnects two endpoints and is exclusive to the customer; there is no shared bandwidth and leased lines are very secure as they are dedicated for the customer’s use.
+
+A MAN uses optical; it is sometimes referred to as metro optical network instead of a MAN.
+
+#
+
+### Virtual Networking
+
+It is now common to provide networking services without deploying a hardware switch or router; it is all done in software.
+
+Companies such as VMware offer **virtual switch (vSwitch)** technology that provides the Ethernet switched and routing functions on the hypervisor, eliminating the need for external networking hardware.
+
+A vSwitch can operate and be configured  the same as an external hardware appliance; just remember, a vSwitch is similar to software virtualization.
+
+Virtualized servers do not have the means for inserting a hardware network interface card since they only exist in software.
+
+A **virtual network interface card (vNI**C) is installed to connect the virtual device to the hypervisor, and from there, out to the LAN.
+
+**Network function virtualization (NFV)** is the process of taking networking functions such as routers, switches, firewalls, load balancers, and controllers and virtualizing them. This process allows all of these functions to run on a single device.
+
+The hypervisor is software that is installed directly on a bare metal server and allows for many virtual machines (VMs) to run thinking they are using the server’s hardware directly. This allows for many servers and virtual network devices to run a on a single piece of computing hardware.
