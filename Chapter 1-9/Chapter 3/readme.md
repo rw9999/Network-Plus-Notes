@@ -52,4 +52,39 @@ You can attach a BNC connector to the cable with a crimper that looks like a wei
 
 ### F-type
 
+The F connector, or F-type connector, is a form of coaxial connector that is used for cable TV.
+
+It has an end that screws to tighten the connector to the interface. 
+
+It resembles the RG-58 mentioned earlier in this section.
+
+![image](https://github.com/user-attachments/assets/89e99d08-3928-44ec-8723-b9d3428c86d3)
+
+An advantage of using coax cable is the braided shielding that provides resistance to electronic pollution like electromagnetic interference (EMI), radio frequency interference (RFI), and other types of stray electronic signals that can make their way onto a network cable and cause communication problems.
+
+### Twisted-Pair Cable
+
+Twisted-pair cable consists of multiple individually insulated wires that are twisted together in pairs. 
+
+Sometimes a metallic shield is placed around them, hence the name shielded twisted-pair (STP). C
+
+able without outer shielding is called unshielded twisted-pair (UTP), and it’s used in twisted-pair Ethernet (10BaseT, 100BaseTX, 1000BaseTX, and 10GBaseT) networks.
+
+### Twinaxial Cable
+
+Twinaxial cabling is used for short-distance high-speed connections such as 10G Ethernet connections in a data center.
+
+The advantage of using Twinax is that there is a significant cost savings over fiber-optic cabling since Twinaxial cables are copper based.
+
+### Ethernet Cable Descriptions
+
+Ethernet cable types are described using a code that follows this format: N <Signaling> X.
+
+The N refers to the signaling rate in megabits per second.
+
+<Signaling> stands for the signaling type—either baseband or broadband—and the X is a unique identifier for a specific Ethernet cabling scheme.
+
+Here’s a common example: 100BaseX. The 100 tells us that the transmission speed is 100 Mb, or 100 megabits. The X value can mean several different things; for example, a T is short for twisted-pair.
+
+This is the standard for running 100-megabit Ethernet over two pairs (four wires) of Category 5, 5e, 6, 6a, 7, and 8 UTP.
 
