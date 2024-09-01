@@ -316,3 +316,88 @@ The term applies to wireless communications devices such as cellular telephones,
 
 **QSFP** The quad small form-factor pluggable (QSFP) is another compact, hot-pluggable transceiver used for data communications applications. It interfaces networking hardware (such as servers and switches) to a fiber-optic cable or active or passive electrical copper connection. It allows data rates from 4x1 Gb/s for QSFP and 4x10 Gbit/s for QSFP+ to the highest rate of 4x28 Gbit/s known as QSFP28 used for 100 Gbit/s links.
 
+#
+
+### Media Converters
+
+Sometimes, you’ll need to convert from one media type to another. Maybe you need to go from one mode of fiber to another mode, or in an even more extreme case, you need to go from fiber to Ethernet.
+
+If you’re faced with situations like these, you’ll need to be familiar with some of the more common media converters:
+
+**Single-Mode Fiber to Ethernet** These devices accept a fiber connector and an Ethernet connector and convert the signal from Ethernet and single-mode fiber
+
+![image](https://github.com/user-attachments/assets/3c5fd57a-014c-4b4a-ac89-71dc85b36d27)
+
+**Multimode Fiber to Ethernet** These devices accept a fiber connector and an Ethernet connector and convert the signal from Ethernet and multimode fiber
+
+![image](https://github.com/user-attachments/assets/282dab03-0cb1-49f2-9ac4-dcd46c62c784)
+
+**Fiber to Coaxial** These devices accept a fiber connector and a coaxial connector and convert digital signals from optical to coax
+
+![image](https://github.com/user-attachments/assets/f9c25477-f6cc-430b-8a24-b43136a91c19)
+
+**Single-Mode to Multimode Fiber** These devices accept a single-mode fiber connector and a multimode fiber connector and convert the signals between the two
+
+![image](https://github.com/user-attachments/assets/2755580e-acff-4457-8a2e-c2b58ec6e136)
+
+#
+
+### Serial Cables
+
+Except for multimode fiber, all the cable varieties so far are considered serial cable types.
+
+In network communications, **serial** means that one bit after another is sent out onto the wire or fiber and interpreted by a network card or other type of interface on the other end.
+
+Each 1 or 0 is read separately and then combined with others to form data.
+
+This is very different from parallel communication, where bits are sent in groups and have to be read together to make sense of the message they represent. A good example of a parallel cable is an old printer cable—which has been replaced by USB
+
+### RS-232
+
+Recommended Standard 232 (RS-232) was a cable standard commonly used for serial data signals connecting the DTE and the DCE, such as a computer’s serial port to an external modem.
+
+These cables normally connect to a connector on the device called a DB-9.
+
+![image](https://github.com/user-attachments/assets/d5769bec-6210-4449-8eec-e2b1077acaac)
+
+Because laptops don’t even come with these types of connectors anymore, they’ve pretty much been replaced by things like USB and USB-C.
+
+### DB-25
+
+The D series of connectors was invented by ITT Cannon in 1952, and the D was followed by A, B, C, D, or E, which described the shell size, and then the numbers of pins or sockets.
+
+DB-25 tells us we have 25 pins in a “B” size shell. 
+
+RS-232  devices generally used the DB-25 connector, but today we don’t use RS-232 or DB-25, and we rarely use a DB-9, which was used for Cisco console cables but has mostly been replaced by USB.
+
+### Universal Serial Bus
+
+Universal Serial Bus (USB) is now the built-in serial bus used on most motherboards.
+
+You usually get a maximum of 4 external USB interfaces, but add-on adapters can take that up to as many as 16 serial interfaces. USB can actually connect a maximum of 127 (7-bit address slots) external devices, and it’s a much more flexible peripheral bus than either serial or parallel.
+
+We use USB to connect printers, scanners, and a host of other input devices like keyboards, joysticks, and mice. When connecting USB peripherals, you’ve got to connect them either directly to one of the USB ports on the PC or to a USB hub that is connected to one of those USB ports.
+
+Hubs can be chained together to provide multiple USB connections, but even though you can connect up to 127 devices, it’s really not practical to go there.
+
+#
+
+### Cable Properties
+
+The reason we use so many different types of cables in a network is that each type has its own set of properties that specifically make it the best to use for a particular area or purpose.
+
+Different types vary in transmission speeds, distance, duplex, noise immunity, and frequency.
+
+### Transmission Speeds
+
+Based on the type of cable or fiber you choose and the network that it’s installed in, network administrators can control the speed of a network to meet the network’s traffic demands.
+
+Admins usually permit, or would like to have, transmission speeds of up to 10 Gbps or higher on the core areas of their networks that connect various network segments.
+
+In the distribution and access areas, where users connect to switches, it’s typically 100 Mbps per connection, but transmission speeds are creeping up because the traffic demand is getting higher. 
+
+### Distance
+
+Deciding factors used in choosing what cable type to use often come down to the topology of a network and the distance between its components.
+
+
