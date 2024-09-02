@@ -400,4 +400,251 @@ In the distribution and access areas, where users connect to switches, it’s ty
 
 Deciding factors used in choosing what cable type to use often come down to the topology of a network and the distance between its components.
 
+Some network technologies can run much farther than others without communication errors, but all network communication technologies are prone to **attenuation**—the degradation of a signal due to the medium itself and the distance signals have to travel.
 
+Some cable types suffer from attenuation more than others. For instance, any network using twisted-pair cable should have a maximum segment length of only 328 feet (100 meters).
+
+### Duplex
+
+All communications are either half-duplex or full-duplex.
+
+The difference is whether the communicating devices can “talk” and “listen” at the same time.
+
+During half-duplex communication, a device can either send communication or receive communication, but not both at the same time. Think walkie-talkie— when you press the button on the walkie-talkie, you turn the speaker off and you can’t hear anything the other side is saying.
+
+In full-duplex communication, both devices can send and receive communication at the same time. This means that the effective throughput is doubled and communication is much more efficient. Full duplex is typical in most of today’s switched networks.
+
+### Noise Immunity (Security, EMI)
+
+Anytime electrons are pushed through two wires next to each other, a magnetic current is created. And we can create a current in the wires.
+
+This is good because without **magnetic flux**, we wouldn’t be using computers—the power that surges through them is a result of it. The bad news is that it also creates two communications issues.
+
+First, because the wire is creating a current based on the 1s and 0s coursing through it, with the right tools in hand, people can read the message in the wire without cutting it or even removing the insulation.
+
+It’s called **tapping** the wire, and it’s a valid security concern.
+
+In ancient history, high-security installations like the Pentagon actually encased communication wires in lead shielding to prevent them from being tapped. STP wires make tapping a little harder, but not hard enough.
+
+The best way to solve the magnetic-flux problem caused by electricity is to not use these wires at all.
+
+Fiber-optic cables carry the signal as light on a glass or a really pure plastic strand, and light is not susceptible to magnetic flux, making fiber optics a whole lot harder to tap. It’s still not impossible—you can do it at the equipment level, but you have to actually cut and then repair the cable to do that, which isn’t likely to go unnoticed.
+ 
+ 
+ The second magnetic-flux issue comes from the outside in instead of from the inside out. Because wires can take on additional current if they’re near any source of magnetism, you’ve got to be really careful where you run your cables. You can avoid EMI by keeping copper cables away from all powerful magnetic sources like electric motors, speakers, amplifiers, fluorescent light ballasts, and so on. Just keep them away from anything that can generate a magnetic field.
+
+ ### Frequency
+
+ Each cable type has a specified maximum frequency that gives you the transmission bandwidth it can handle.
+
+ Cat 5e cable is tested to 100 MHz maximum frequency and can run 1 Gbps signals for relatively short distances. That’s maxing it out, but it’s still good for connecting desktop hosts at high speeds.
+
+On the other hand, Cat 6 is a 250 MHz cable that can handle 1 Gbps data flow all day long with ease. Cat 6 has a lot more twists and thicker cables, so it’s best used when connecting floors of a building; however, be sure to check out Cat 7 and 8, which is more of our future cabling.
+
+Although a signal is measured as bandwidth, the capacity to carry the signal in a cable is measured as frequency.
+
+#
+
+### Wiring Standards
+
+Ethernet cabling is an important thing to understand, especially if you’re planning to work on any type of LAN.
+
+There are different types of wiring standards available:
+
+- T568A
+
+- T568B
+
+- Straight-through
+
+- Crossover
+
+- Rolled/rollover
+
+### T568A vs. T568B
+
+If you look inside a network cable, you’ll find four pairs of wires twisted together to prevent crosstalk; they’re also twisted like this to help prevent EMI and tapping.
+
+The same pins have to be used on the same colors throughout a network to receive and transmit, but how do you decide which color wire goes with which pin? The good news is that you don’t have to decide—at least not completely.
+
+Two wiring standards have surfaced that have been agreed on by over 60 vendors, including AT&T, 3Com, and Cisco, although there isn’t 100 percent agreement.
+
+In other words, over the years, some network jacks have been pinned with the T568A standard and some have used the T568B standard
+
+**T568A** The green pair is used for pins 1 and 2 but the orange pair is split to pins 3 and 6, separated by the blue pair.
+
+![image](https://github.com/user-attachments/assets/c421f9b6-0da7-464b-8412-9fba52beb633)
+
+**T568B** The orange pair is pins 1 and 2 and the green pair is pins 3 and 6, again separated by the blue pair.
+
+![image](https://github.com/user-attachments/assets/923f77c4-37e0-4b65-b93c-8babfe1a9870)
+
+Note that the only difference between T568A and T568B is that pairs 2 and 3 (orange and green) are swapped. Also, you can use a UTP coupler in order to connect two RJ-45 connectors together to lengthen a cable or in order to make a straight-through cable into a crossover, and vice versa.
+
+If you’re installing new cabling to each cubicle and/or office, you need to make sure to connect all eight pins—and use Cat 5e through 8.
+
+Voice over IP (VoIP) uses all eight pins, and it’s really common to have voice and data on the same wire at the same time in today’s networks. 
+
+Pins 4, 5, 7, and 8 are used in both standards. They are needed for 1000BaseT, PoE, and specialized versions of 100 Mbps networks.
+
+This only leaves the wire pairs to connect to pins 1, 2, 3, and 6 for data.
+
+Remember, if we connect the green-white, green, orange-white, and orange wires to pins 1, 2, 3, and 6, respectively, on both sides of the cable, we’re using the T568A standard and creating the kind of straight-through cable that’s regularly implemented as a regular **patch cable** for most networks.
+
+On the other hand, if we switch from pin 1 to pin 3 and from pin 2 to pin 6 on one side only, we’ve created a **crossover cable** for most networks.
+
+### Straight-Through Cable
+
+The straight-through cable is used to connect a host to a switch or hub or a router to a switch or hub.
+
+Four wires are used in straight-through cable to connect 10/100 Ethernet devices.
+
+![image](https://github.com/user-attachments/assets/5ff1e639-18db-4b3a-84d4-11b949b82286)
+
+Notice that only pins 1, 2, 3, and 6 are used. Connect 1 to 1, 2 to 2, 3 to 3, and 6 to 6
+
+Just remember that this would be a 10/100 Ethernet-only cable, so it wouldn’t work with 1000 Mbps or greater Ethernet.
+
+### Crossover Cable
+
+The same four wires are used in this cable, and just as with the straight-through cable, you simply connect the different pins together.
+
+Crossover cables can be used to connect these devices:
+
+- Switch to switch
+
+- Hub to hub
+
+- Host to host
+
+- Hub to switch
+
+- Router direct to host
+
+![image](https://github.com/user-attachments/assets/43d2f075-709a-4e40-9e02-9671d123d596)
+
+A crossover cable is typically used to connect two switches together, but it can also be used to test communications between two workstations directly, bypassing the switch.
+
+A crossover cable is used only in Ethernet UTP installations.
+
+You can connect two workstation NICs or a workstation and a server NIC directly with it.
+
+If you are trying to match the straight-through and crossover cables with the T568A and T568B standard, here is how it would look:
+
+T568A+T568A = straight-through
+
+T568B+T568B = straight-through
+
+T568A+T568B = crossover
+
+You can carry a crossover cable with you in your tool bag along with your laptop—then, if you want to ensure that a server’s NIC is functioning correctly, you can just connect your laptop directly to the server’s NIC using your handy crossover cable. You should be able to log in to the server if both NICs are configured correctly. Use a cable tester to make sure that what you’re dealing with is in fact a crossover cable. The tester can also tell you if there’s a problem with the cable.
+
+![image](https://github.com/user-attachments/assets/1a0703b9-1d5b-49ba-a212-bc0577f45f4a)
+
+This cost-effective little tool will tell you beyond a shadow of a doubt if you have a straight-through or crossover cable—or even if there’s a problem with the cable.
+
+### UTP Gigabit Wiring (1000BaseT)
+
+In the previous examples of 10BaseT and 100BaseT UTP wiring, only two wire pairs were used, but that’s just not good enough for Gigabit UTP transmission.
+
+1000BaseT UTP wiring requires four wire pairs and uses more advanced electronics so that each and every pair in the cable can transmit simultaneously.
+
+Even so, Gigabit wiring is almost identical to my earlier 10/100 example, except that we’ll use the other two pairs in the cable.
+
+For a straight-through cable it’s still 1 to 1, 2 to 2, and so on up to pin 8.
+
+UTP gigabit crossover Ethernet cable
+
+![image](https://github.com/user-attachments/assets/7ebca630-04a6-4f7a-a320-2df7063a8f15)
+
+### Rolled/Rollover Cable
+
+Although rolled cable isn’t used to connect any Ethernet connections together, you can use a rolled Ethernet cable to connect a host EIA-TIA 232 interface to a router console serial communication (COM) port.
+
+If you have a Cisco router or switch, you would use this cable to connect your PC, Mac, or a device like a tablet to the Cisco hardware.
+
+Eight wires are used in this cable to connect serial devices, although not all eight are used to send information, just as in Ethernet networking.
+
+![image](https://github.com/user-attachments/assets/f0101fb9-d8f8-47f2-ac68-5add23efca5f)
+
+### T1 Crossover Cable
+
+There is an old device called a CSU/DSU, which used to be all-so- important. This old device may still be your connection to the Internet for the enterprise if you have serial WANs. The type of cable you use to connect to this device from your router depends on the interface types that are available on the router.
+
+The router may connect with several types of serial cables if a T1 connection is not built into it. If a T1 connection is built into the router, you will use an Ethernet cable.
+
+![image](https://github.com/user-attachments/assets/3abde11e-f059-4625-8841-d2a24e7c8ba3)
+
+In rare instances you may need to run a cable between two CSU/DSUs. In that case you would need a T1 crossover cable.
+
+A T1 cable uses pairs 1 and 2, so to connect two T1 CSU/ DSU devices back-to- back requires a crossover cable that swaps these pairs. Specifically, pins 1, 2, 4, and 5 are connected to 4, 5, 1, and 2, respectively.
+
+#
+
+### Installing Wiring Distributions
+
+You probably will be, or already are, involved in the purchase and installation of the components that will connect the computers throughout your organization’s building. And it may also be up to you to verify that all of the network components have been installed properly and tested.
+
+### MDF/IDF
+
+The main distribution frame (MDF) is a wiring point that’s generally used as a reference point for telephone lines.
+
+It’s also considered the WAN termination point.
+
+It’s installed in the building as part of the prewiring, and the internal lines are connected to it. After that, all that’s left is to connect the external (telephone company) lines to the other side to complete the circuit.
+
+Often, another wire frame called an intermediate distribution frame (IDF) is located in an equipment or telecommunications room.
+
+It’s connected to the MDF and is used to provide greater flexibility for the distribution of all the communications lines to the building. It’s typically a sturdy metal rack designed to hold the bulk of cables coming from all over the building.
+
+### 25 Pair
+
+A 25-pair cable consists of 25 individual pairs of wires all inside one common insulating jacket.
+
+It’s not generally used for data cabling, just for telephone cabling, and especially for backbone and cross-connect cables because it reduces the cable clutter significantly. 
+
+This type of cable is often referred to as a **feeder cable** because it supplies signal to many connected pairs.
+
+### 66 Block
+
+They came out in 1962 and can really only be used for old analog telephone connections.
+
+This uses the 25-pair cable and is a standard termination block containing 50 rows, which created an industry standard for easy termination of voice cabling.
+
+### 110 Block
+
+A newer type of wiring distribution point called a 110 block has replaced most telephone wire installations and is also used for computer networking.
+
+On one side, wires are punched down; the other side has RJ-11 (for phone) or RJ-45 (for network) connections.
+
+You’ll find 110 blocks in sizes from 25 to more than 500 wire pairs, and some are capable of carrying 1 Gbps connections when used with Category 6 or greater cables.
+
+The hitch is that using Cat 6 with the 110 block is really difficult because of the size of the Cat 6 wiring.
+
+110 Block
+
+![image](https://github.com/user-attachments/assets/3b207c1c-c6ff-420d-ac1e-c9c545617eeb)
+
+There is a proprietary European variant of the 110 block called a Krone block. The Krone block is compatible with the 110 block and can be used interchangeably.
+
+### BIX Block
+
+Another type of punch-down block is the BIX block. A BIX block can terminate up to 25 cable pairs and have a slip-in fitting that does not require the wires to be pre-stripped.
+
+### Demarc/Demarc Extension
+
+The demarc (short for demarcation) is the last point of responsibility for the service provider.
+
+It’s often at the MDF in your building connection, especially if your building is large, but it’s usually just an RJ-45 jack that your channel service unit/data service unit (CSU/DSU) connects from your router to wide area network (WAN) connections.
+
+When troubleshooting, network admins often test for connectivity on both sides of the demarc to determine if the problem is internal or external.
+
+The length of copper or fiber that begins after the demarc but still doesn’t reach all the way up to your office is referred to as a **demarc extension**.
+
+### Smart Jack
+
+A smart jack, also called a network interface device (NID) or network interface unit (NIU), is owned by the PSTN and is a special network interface that’s often used between the service provider’s network and the internal network.
+
+You can’t physically test to an actual demarc because it’s just an RJ-45 jack, but the service provider may install an NID that has power and can be looped for testing purposes.
+
+The smart jack device may also provide for code and protocol conversion, making the signal from the service provider usable by the devices on the internal network like the CSU/DSU.
