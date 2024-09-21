@@ -79,3 +79,9 @@ The situation just described is typically found in a hub environment where each 
 A broadcast domain refers to the set of all devices on a network segment that hear all the broadcasts sent on that segment.
 
 Even though a broadcast domain is typically a boundary delimited by physical media like switches and repeaters, it can also reference a logical division of a network segment where all hosts can reach each other via a Data Link layer (hardware address) broadcast.
+
+#
+
+### CSMA/CD
+
+Ethernet networking uses carrier sense multiple access with collision detection (CSMA/CD), a media access control contention method that helps devices share the bandwidth evenly without having two devices transmit at the same time on the network medium.
