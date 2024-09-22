@@ -285,3 +285,72 @@ The organizationally unique identifier (OUI) is assigned by the Institute of Ele
 
 It’s composed of 24 bits, or 3 bytes.
 
+The organization, in turn, assigns a globally administered address (24 bits, or 3 bytes) that is unique to each and every adapter it manufactures.
+
+The Individual/Group (I/G) address bit is used to signify if the destination MAC address is a unicast or a multicast/broadcast Layer 2 address. 
+
+If the bit is set to 0, then it is an Individual MAC address and is a unicast address. If the bit is set to 1, it is a Group address and is a multicast/ broadcast address.
+
+The next bit is the Local/Global bit (L/G). This bit is used to tell if the MAC address is the burned-in-address (BIA) or a MAC address that has been changed locally.
+
+You’ll see this happen when we get to IPv6 addressing. 
+
+The low-order 24 bits of an Ethernet address represent a locally administered or manufacturer-assigned code. This portion commonly starts with 24 0s for the first card made and continues in order until there are 24 1s for the last (16,777,216th) card made. You’ll find that many manufacturers use these same six hex digits as the last six characters of their serial number on the same card.
+
+#
+
+### Ethernet Frames
+
+The Data Link layer is responsible for combining bits into bytes and bytes into frames.
+
+Frames are used at the Data Link layer to encapsulate packets handed down from the Network layer for transmission on a type of physical media access.
+
+The function of Ethernet stations is to pass data frames between each other using a group of bits known as a MAC frame format. This provides error detection from a cyclic redundancy check (CRC). But remember—this is error detection, not error correction.
+
+![image](https://github.com/user-attachments/assets/e119e268-ca64-4bb9-a23e-8cf36cb28c56)
+
+Encapsulating a frame within a different type of frame is called **tunneling**.
+
+The following information regarding frame headings and the various types of Ethernet frames are beyond the scope of the CompTIA Network+ objectives.
+
+Following are the details of the different fields in the 802.3 and Ethernet frame types:
+
+**Preamble** An alternating 1,0 pattern provides a clock at the start of each packet, which allows the receiving devices to lock the incoming bit stream.
+
+**Start of Frame Delimiter (SOF)/Synch** The preamble is seven octets, and the start of a frame (SOF) is one octet (synch). The SOF is 10101011, where the last pair of 1s allows the receiver to come into the alternating 1,0 pattern somewhere in the middle and still sync up and detect the beginning of the data.
+
+**Destination Address (DA)** This transmits a 48-bit value using the least significant bit (LSB) first. The DA is used by receiving stations to determine whether an incoming packet is addressed to a particular host and can be an individual address or a broadcast or multicast MAC address. Remember that a broadcast is all 1s (or Fs in hex) and is sent to all devices, but a multicast is sent only to a similar subset of hosts on a network.
+
+**Source Address (SA)** The SA is a 48-bit MAC address used to identify the transmitting device, and it uses the LSB first. Broadcast and multicast address formats are illegal within the SA field.
+
+**Length or Type** 802.3 uses a Length field, but the Ethernet frame uses a Type field to identify the Network layer protocol. 802.3 by itself cannot identify the upper-layer routed protocol and must be used with a proprietary LAN protocol—Internetwork Packet Exchange (IPX), for example.
+
+**Data** This is a packet sent down to the Data Link layer from the Network layer. The size can vary from 64 to 1,500 bytes.
+
+**Frame Check Sequence (FCS**) FCS is a field that is at the end of the frame and is used to store the CRC.
+
+You can see that the following frame has only three fields: Destination, Source, and Type, displayed as Protocol Type on this analyzer:
+
+    Destination: 00:60:f5:00:1f:27
+    Source: 00:60:f5:00:1f:2c
+
+**Protocol Type: 08-00 IP** This is an Ethernet_II frame. Notice that the Type field is IP, or 08-00 (mostly just referred to as 0x800) in hexadecimal.
+
+The next frame has the same fields, so it must be an Ethernet_II frame too:
+
+    Destination: ff:ff:ff:ff:ff:ff Ethernet Broadcast
+    Source: 02:07:01:22:de:a4
+
+**Protocol Type: 08-00 IP** Did you notice that this frame was a broadcast? You can tell because the destination hardware address is all 1s in binary, or all Fs in hexadecimal.
+
+You can see that the Ethernet frame is the same Ethernet_II frame we use with the IPv4 routed protocol. The difference is that the Type field has 0x86dd when we are carrying IPv6 data, and when we have IPv4 data, we use 0x0800 in the Protocol field:
+
+    Destination: IPv6-Neighbor-Discovery_00:01:00:03 (33:33:00:01:00:03)
+    Source: Aopen_3e:7f:dd (00:01:80:3e:7f:dd)
+
+**Type: IPv6 (0x86dd)** This is the beauty of the Ethernet_II frame. Because of the Protocol field, we can run any Network layer routed protocol and it will carry the data because it can identify that particular Network layer protocol!
+
+## Ethernet at the Physical Layer
+
+
+
