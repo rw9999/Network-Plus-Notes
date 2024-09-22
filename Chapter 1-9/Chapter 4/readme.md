@@ -191,5 +191,97 @@ Plus, full-duplex uses a point-to-point connection between the transmitter of th
 
 You don’t need to worry about collisions because now it’s like a freeway with multiple lanes instead of the single-lane road provided by half-duplex.
 
+Full-duplex Ethernet is supposed to offer 100 percent efficiency in both directions—forexample, you can get 20 Mbps with a 10 Mbps Ethernet running full-duplex, 200 Mbps for Fast Ethernet, or even 2000 Mbps for Gigabit Ethernet.
 
+But this rate is something known as an **aggregate rate**, which translates as “you’re supposed to get” 100 percent efficiency.
+
+Full-duplex Ethernet can be used in many situations; here are some examples:
+
+- With a connection from a switch to a host
+
+- With a connection from a switch to a switch
+
+- With a connection from a host to a host using a crossover cable
+
+You can run full-duplex with just about any device except a hub.
+
+You may be wondering: If it’s capable of all that speed, why wouldn’t it deliver? Well, when a full-duplex Ethernet port is powered on, it first connects to the remote end and then negotiates with the other end of the Fast Ethernet link. 
+
+This is called an **auto-detect mechanism**. This mechanism first decides on the exchange capability, which means it checks to see if it can run at 10, 100, or even 1000 Mbps. It then checks to see if it can run full-duplex, and if it can’t, it will run half-duplex instead
+
+Hosts usually auto-detect both the Mbps and the duplex type available (the default setting), but you can manually set both the speed and duplex type on the network interface card (NIC)
+
+![image](https://github.com/user-attachments/assets/250fe181-8263-464c-8091-aaca134d789f)
+
+Today, it’s pretty rare to go into a NIC configuration on a host and change these settings, but this example demonstrates that you can do that if you want.
+
+Remember that half-duplex Ethernet shares a collision domain and provides a lower effective throughput than full-duplex Ethernet, which typically has a private collision domain and a higher effective throughput.
+
+Lastly, remember these important points:
+
+- There are no collisions in full-duplex mode.
+
+- A dedicated switch port is required for each full-duplex host.
+
+- The host network card and the switch port must be capable of operating in full-duplex mode.
+
+## Ethernet at the Data Link Layer
+
+Ethernet at the Data Link layer is responsible for Ethernet addressing, commonly referred to as hardware addressing or MAC addressing.
+
+Ethernet is also responsible for framing packets received from the Network layer and preparing them for transmission on the local network through the Ethernet contention media-access method known as CSMA/CD.
+
+Ethernet MAC addresses are made up of hexadecimal addresses.
+
+### Binary to Decimal and Hexadecimal Conversion
+
+Each digit used is limited to being either a 1 (one) or a 0 (zero), and each digit is called 1 bit (short for binary digit). 
+
+Typically, you count either 4 or 8 bits together, with these being referred to as a nibble and a byte, respectively.
+
+What’s interesting about binary numbering is the value represented in a decimal format—the typical decimal format being the base-10 number scheme.
+
+The binary numbers are placed in a value spot, starting at the right and moving left, with each spot having double the value of the previous spot.
+
+![image](https://github.com/user-attachments/assets/9de1f3d2-29b9-402b-b8b2-0a3600eb28a2)
+
+Remember, a nibble is four bits and a byte is eight bits. In network addressing, we often refer to a byte as an **octet**.
+
+Mathematically, octal addressing actually refers to base 8, which is completely different from the base 10 we are familiar with.
+
+What all this means is that if a one digit (1) is placed in a value spot, then the nibble or byte takes on that decimal value and adds it to any other value spots that have a 1. And if a zero (0) is placed in a bit spot, you don’t count that value.
+
+If we have a 1 placed in each spot of our nibble, we then add up 8 + 4 + 2 + 1 to give us a maximum value of 15. Another example for our nibble values is 1010, which means that the 8 bit and the 2 bit are turned on and equal a decimal value of 10. If we have a nibble binary value of 0110, then our decimal value is 6 because the 4 and 2 bits are turned on.
+
+![image](https://github.com/user-attachments/assets/566fe631-ee18-4e57-a11c-a5c67c1567b8)
+
+Hexadecimal addressing is completely different than binary or decimal—it’s converted by reading nibbles, not bytes.
+
+First, understand that the hexadecimal addressing scheme uses only the numbers 0 through 9. And because the numbers 10, 11, 12, and so on can’t be used (because they are two-digit numbers), the letters A, B, C, D, E, and F are used to represent 10, 11, 12, 13, 14, and 15, respectively.
+
+![image](https://github.com/user-attachments/assets/a4ee0ab8-52c8-4ed6-92d4-6b42b2f43065)
+
+![image](https://github.com/user-attachments/assets/ea39536a-56b7-461a-9ac0-a43baf5fb60f)
+
+So suppose you have something like this: 0x6A. (Some manufacturers put 0x in front of characters so you know that they’re a hex value, while others just give you an h. It doesn’t have any other special meaning.) What are the binary and decimal values?
+
+To correctly answer that question, all you have to remember is that each hex character is one nibble and two hex characters together make a byte.
+
+To figure out the binary value, first put the hex characters into two nibbles and then put them together into a byte. 6 = 0110 and A (which is 10 in decimal) = 1010, so the complete byte is 01101010
+
+To convert from binary to hex, just take the byte and break it into nibbles.
+
+#
+
+### Ethernet Addressing
+
+Ethernet addressing works by using the Media Access Control (MAC) address burned into each and every Ethernet NIC. 
+
+The MAC, or hardware, address is a 48-bit (6-byte) address written in a hexadecimal format.
+
+![image](https://github.com/user-attachments/assets/6852a9db-1d5d-4c10-ad0f-0949ea81e40e)
+
+The organizationally unique identifier (OUI) is assigned by the Institute of Electrical and Electronics Engineers (IEEE) to an organization.
+
+It’s composed of 24 bits, or 3 bytes.
 
