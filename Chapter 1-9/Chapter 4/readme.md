@@ -85,3 +85,111 @@ Even though a broadcast domain is typically a boundary delimited by physical med
 ### CSMA/CD
 
 Ethernet networking uses carrier sense multiple access with collision detection (CSMA/CD), a media access control contention method that helps devices share the bandwidth evenly without having two devices transmit at the same time on the network medium.
+
+CSMA/CD was created to overcome the problem of those collisions that occur when packets are transmitted simultaneously from different hosts.
+
+Good collision management is crucial because when a host transmits in a CSMA/CD network, all the other hosts on the network receive and examine that transmission.
+
+Only bridges, switches, and routers, but not hubs, can effectively prevent a transmission from propagating throughout the entire network.
+
+![image](https://github.com/user-attachments/assets/9b988df3-98e8-461a-92c0-94e1ab2caec2)
+
+When a host wants to transmit over the network, it first checks for the presence of a digital signal on the wire.
+
+If all is clear, meaning that no other host is transmitting, the host will then proceed with its transmission.
+
+The transmitting host constantly monitors the wire to make sure no other hosts begin transmitting.
+
+If the host detects another signal on the wire, it sends out an extended jam signal that causes all hosts on the segment to stop sending data (think busy signal).
+
+The hosts respond to that jam signal by waiting a while before attempting to transmit again.
+
+Backoff algorithms, represented by the clocks counting down on either side of the jammed devices, determine when the colliding stations can retransmit. If collisions keep occurring after 15 tries, the hosts attempting to transmit will then time out.
+
+When a collision occurs on an Ethernet LAN, the following things happen:
+
+- A jam signal informs all devices that a collision occurred.
+
+- The collision invokes a random backoff algorithm.
+
+- Each device on the Ethernet segment stops transmitting for a short time until the timers expire.
+
+- All hosts have equal priority to transmit after the timers have expired.
+
+And following are the effects of having a CSMA/CD network that has sustained heavy collisions:
+
+- Delay
+
+- Low throughput
+
+- Congestion
+
+Backoff on an 802.3 Ethernet network is the retransmission delay that’s enforced when a collision occurs. When a collision occurs, a host will resume transmission after the forced time delay has expired. After this backoff delay period has expired, all stations have equal priority to transmit data.
+
+#
+
+### Broadband/Baseband
+
+We have two ways to send analog and digital signals down a wire: broadband and baseband.
+
+We hear the term broadband a lot these days because that is pretty much what everyone uses at home.
+
+It allows us to have both our analog voice and digital data carried on the same network cable or physical medium.
+
+Broadband allows us to send multiple frequencies of different signals down the same wire at the same time (called frequency-division multiplexing) and to send both analog and digital signals.
+
+Baseband is what all LANs use.
+
+This is where all the bandwidth of the physical media is used by only one signal.
+
+For example, Ethernet uses only one digital signal at a time, and it requires all the available bandwidth. 
+
+If multiple signals are sent from different hosts at the same time, we get collisions; same with wireless, except that uses only analog signaling.
+
+#
+
+### Bit Rates vs. Baud Rate
+
+Bit rate is a measure of the number of data bits (0s and 1s) transmitted in one second in either a digital or analog signal. A figure of 56,000 bits per second (bps) means 56,000 0s or 1s can be transmitted in one second, which we simply refer to as bps.
+
+In the 1970s and 1980s, we used the term baud rate a lot, but that was replaced by bps because it was more accurate. Baud was a term of measurement named after a French engineer, Jean-Maurice-Émile Baudot, because he used it to measure the speed of telegraph transmissions.
+
+One baud is one electronic state change per second—for example, from 0.2 volts to 3 volts or from binary 0 to 1. However, since a single state change can involve more than a single bit of data, the bps unit of measurement has replaced it as a more accurate definition of how much data you’re transmitting or receiving.
+
+#
+
+### Wavelength
+
+With electromagnetic radiation, radio waves, light waves, or even infrared (heat) waves make characteristic patterns as they travel through space. Some patterns can be the same, and some can be different.
+
+![image](https://github.com/user-attachments/assets/8e423164-b45b-4e94-94c7-d1b6e15b6388)
+
+Each wave pattern has a certain shape and length.
+
+The distance between peaks (high points) is called wavelength.
+
+If two wave patterns are different, we would say they’re not on the same wavelength and that is the way we tell different kinds of electromagnetic energy apart.
+
+We can use this to our advantage in electronics by sending traffic on different wavelengths at the same time.
+
+#
+
+### Half-and Full-Duplex Ethernet
+
+Half-duplex Ethernet is defined in the original 802.3 Ethernet specification.
+
+Basically, when you run half-duplex, you’re using only one wire pair with a digital signal either transmitting or receiving.
+
+This really isn’t all that different from full-duplex because you can both transmit and receive—you just don’t get to do that at the same time running half-duplex as you can if you’re running full-duplex.
+
+If a host hears a digital signal, it uses the CSMA/CD protocol to help prevent collisions and to permit retransmitting if a collision does occur. Half-duplex Ethernet—typically 10BaseT—is only about 30 to 40 percent efficient because a large 10BaseT network will usually provide only 3 Mbps to 4 Mbps at most. Although it’s true
+that 100 Mbps Ethernet can and sometimes does run half-duplex, it’s just not very common to find that happening anymore.
+
+In contrast, full-duplex Ethernet uses two pairs of wires at the same time instead of one wire pair like half-duplex employs.
+
+Plus, full-duplex uses a point-to-point connection between the transmitter of the sending device and the receiver of the receiving device (in most cases the switch). This means that with full-duplex data transfer, you not only get faster data-transfer speeds, but you get collision prevention too.
+
+You don’t need to worry about collisions because now it’s like a freeway with multiple lanes instead of the single-lane road provided by half-duplex.
+
+
+
