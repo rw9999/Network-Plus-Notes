@@ -352,5 +352,146 @@ You can see that the Ethernet frame is the same Ethernet_II frame we use with th
 
 ## Ethernet at the Physical Layer
 
+Ethernet was first implemented by a group called DIX (Digital, Intel, and Xerox). They created and implemented the first Ethernet LAN specification, which the IEEE used to create the IEEE 802.3 Committee. This was a 10 Mbps network that ran on coax, then on twisted-pair, and finally on fiber physical media.
 
+The IEEE extended the 802.3 Committee to three new committees known as 802.3u (Fast Ethernet), 802.3ab (Gigabit Ethernet on Category 5+), and then finally to 802.3ae (10 Gbps over fiber and coax).
 
+![image](https://github.com/user-attachments/assets/611fbda9-b002-45a6-9119-3db718c9500a)
+
+When designing your LAN, it’s really important to understand the different types of Ethernet media available to you.
+
+The Electronic Industries Association and the newer Telecommunications Industry Alliance (EIA/TIA) together form the standards body that creates the Physical layer specifications for Ethernet. The EIA/TIA specifies that Ethernet use a registered jack (RJ) connector on unshielded twisted-pair (UTP) cabling (RJ-45). However, the industry is calling this just an 8-pin modular connector.
+
+Each Ethernet cable type that is specified by the EIA/TIA has something known as **inherent attenuation**, which is defined as the loss of signal strength as it travels the length of a cable and is measured in decibels (dB).
+
+The cabling used in corporate and home markets is measured in categories. A higher-quality cable will have a higher-rated category and lower attenuation.
+
+For example, Category 5 is better than Category 3 because Category 5 cables have more wire twists per foot and therefore less crosstalk. Crosstalk is the unwanted signal interference from adjacent pairs in the cable.
+
+Here are the original IEEE 802.3 standards:
+
+**10Base2** This is also known as thinnet and can support up to 30 workstations on a single segment. It uses 10 Mbps of baseband technology, coax up to 185 meters in length, and a physical and logical bus with Attachment Unit Interface (AUI) connectors. The 10 means 10 Mbps, and Base means baseband technology—a  signaling method for communication on the network—and the 2 means almost 200 meters. 10Base2 Ethernet cards use BNC (British Naval Connector, Bayonet Neill-Concelman, or Bayonet Nut Connector) and T-connectors to connect to a network.
+
+**10Base5** Also known as thicknet, 10Base5 uses a physical and logical bus with AUI connectors, 10 Mbps baseband technology, and coax up to 500 meters in length. You can go up to 2,500 meters with repeaters and 1,024 users for all segments. 
+
+**10BaseT** This is 10 Mbps using Category 3 UTP wiring. Unlike on 10Base2 and 10Base5 networks, each device must connect into a hub or switch, and you can have only one host per segment or wire. It uses an RJ-45 connector (8-pin modular connector) with a physical star topology and a logical bus.
+
+Each of the 802.3 standards defines an AUI, which allows a one-bit-at-a-time transfer to the Physical layer from the Data Link media-access method. This allows the MAC address to remain constant but means the Physical layer can support both existing and new technologies. The original AUI interface was a 15-pin connector, which allowed a transceiver (transmitter/ receiver) that provided a 15-pin- to- twisted- pair conversion.
+
+There’s an issue, though—the AUI interface can’t support 100 Mbps Ethernet because of the high frequencies involved. So basically, 100BaseT needed a new interface, and the 802.3u specifications created one called the Media Independent Interface (MII) that provides 100 Mbps throughput. The MII uses a nibble, which you of course remember is defined as 4 bits. Gigabit Ethernet uses a Gigabit Media Independent Interface (GMII) and transmits 8 bits at a time.
+
+802.3u (Fast Ethernet) is compatible with 802.3 Ethernet because they share the same physical characteristics. Fast Ethernet and Ethernet use the same maximum transmission unit (MTU) and the same MAC mechanisms, and they both preserve the frame format that is used by 10BaseT Ethernet. Basically, Fast Ethernet is just based on an extension to the IEEE 802.3 specification, and because of that, it offers us a speed increase of 10 times 10BaseT.
+
+100BaseT and 100BaseTX: What’s the difference? 100BaseT is the name of a group of standards for Fast Ethernet that includes 100BaseTX. Also included are 100BaseT4 and 100BaseT2. The same can be said about 1000BaseT and 1000BaseX.
+
+Ethernet’s implementation over fiber can sometimes be referred to as 100BaseTF even though this isn’t an actual standard. It just means that Ethernet technologies are being run over fiber cable.
+
+Here are the expanded IEEE Ethernet 802.3 standards, starting with Fast Ethernet:
+
+**100BaseTX (IEEE 802.3u)** 100BaseTX, most commonly known as Fast Ethernet, uses EIA/TIA Category 5 or 5e or 6 and UTP two-pair wiring. It allows for one user per segment up to 100 meters long (328 feet) and uses an RJ-45 connector with a physical star topology and a logical bus.
+
+**100BaseFX (IEEE 802.3u)** Uses 62.5/125-micron multimode fiber cabling up to 412 meters long and point-to- point topology. It uses ST and SC connectors, which are media-interface connectors
+
+**1000BaseCX (IEEE 802.3z)** Copper twisted-pair called twinax (a balanced coaxial pair) that can run only up to 25 meters and uses a special 9-pin connector known as the High-Speed Serial Data Connector (HSSDC).
+
+**1000BaseT (IEEE 802.3ab)** Category 5, four-pair UTP wiring, and up to 100 meters long (328 feet).
+
+**1000BaseTX** Category 5, two-pair UTP wiring up to 100 meters long (328 feet). Not used, and has been replaced by Category 6 cabling.
+
+**1000BaseSX (IEEE 802.3z)** The implementation of Gigabit Ethernet runs over multimode fiber-optic cable instead of copper twisted-pair cable and uses short wavelength laser. Multimode fiber (MMF), using a 62.5-and 50-micron core, utilizes an 850 nanometer (nm) laser and can go up to 220 meters with 62.5-micron; 550 meters with 50-micron.
+
+**1000BaseLX (IEEE 802.3z)** Single-mode fiber that uses a 9-micron core, 1,300 nm laser, and can go from 3 km up to 10 km.
+
+**10GBaseT** 10GBaseT is a standard created by the IEEE 802.3an committee to provide 10 Gbps connections over conventional UTP cables (Category 5e, 6, 6A, or 7 cables). 10GBaseT allows the conventional RJ-45 used for Ethernet LANs. It can support signal transmission at the full 100-meter distance specified for LAN wiring. If you need to implement a 10 Gbps link.
+
+**10GBaseSR** An implementation of 10 Gigabit Ethernet that uses short-wavelength lasers at 850 nm over multimode fiber. It has a maximum transmission distance of between 2 and 300 meters (990 feet), depending on the size and quality of the fiber.
+
+**10GBaseLR** An implementation of 10 Gigabit Ethernet that uses long-wavelength lasers at 1,310 nm over single-mode fiber. It also has a maximum transmission distance between 2 meters and 10 km, or 6 miles, depending on the size and quality of the fiber.
+
+**10GBaseER** An implementation of 10 Gigabit Ethernet running over single-mode fiber that uses extra-long- wavelength lasers at 1,550 nm. It has the longest transmission distances possible of all the 10 Gigabit technologies: anywhere from 2 meters up to 40 km, again depending on the size and quality of the fiber used.
+
+**10GBaseSW** 10GBaseSW, as defined by IEEE 802.3ae, is a mode of 10GBaseS for MMF with an 850 nm laser transceiver and a bandwidth of 10 Gbps. It can support up to 300 meters of cable length. This media type is designed to connect to SONET equipment.
+
+**10GBaseLW** 10GBaseLW is a mode of 10GBaseL supporting a link length of 10 km on standard single-mode fiber (SMF) (G.652). This media type is also designed to connect to SONET equipment.
+
+**10GBaseEW** 10GBaseEW is a mode of 10GBaseE supporting a link length of up to 40 km on SMF based on G.652 using optical-wavelength 1,550 nm. This is another media type designed to connect to SONET equipment.
+
+**40GBaseT** 40GBaseT is a standard created by the IEEE 802.3bq committee and supports Ethernet speeds up to 40G and is also used for 25G Ethernet connections commonly found in server NICs. There is less distance than the slower Ethernet types with 40GBaseT limited to 30 meters. This is usually sufficient for data center cabling. Category 8 cabling is required to support the high data rates of 25GBaseT and 40GBaseT.
+
+If you want to implement a network medium that is not susceptible to electromagnetic interference (EMI), fiber-optic cable provides a more secure, long-distance cable that is not susceptible to EMI at high speeds as UTP is.
+
+![image](https://github.com/user-attachments/assets/0e0cc709-2972-48ee-9e9c-301c7c79e83a)
+
+![image](https://github.com/user-attachments/assets/86f992c6-46c2-48ac-b69c-d302b3de56c0)
+
+![image](https://github.com/user-attachments/assets/0fd8892c-2561-4555-9c6e-c894a71f6a41)
+
+An advantage of 100BaseFX over 100BaseTX is longer cable runs, but 100BaseTX is easier to install.
+
+## Ethernet over Other Standards (IEEE 1905.1-2013)
+
+IEEE 1905.1-2013 is an IEEE standard that defines a convergent digital home network for both wireless and wireline technologies.
+
+The technologies include IEEE 802.11 (Wi-Fi), IEEE 1901 (HomePlug, HD-PLC) powerline networking, IEEE 802.3 Ethernet, and Multimedia over Coax (MoCA).
+
+The 1905.1-2013 was published in April 2013. The IEEE 1905.1 Standard Working Group is sponsored by the IEEE Power Line Communication Standards Committee (PLCSC).
+
+The idea behind the 1905.1 technology standards is simple setup, configuration, and operation of home networking devices using both wired and wireless technologies.
+
+This will take advantage of the performance, coverage, and mobility benefits of multiple interfaces (Ethernet, Wi-Fi, Powerline, and MoCA), which enables better coverage and throughput in every room for both wireless and fixed devices.
+
+#
+
+### Ethernet over Power Line
+
+In February 2011, the IEEE finally published a standard for Broadband over Power Line (BPL) called IEEE 1901, also referred to as Power Line Communication (PLC) or even Power Line Digital Subscriber Line (PDSL).
+
+Although this technology has been available for decades in theory, without an IEEE standard it was just not adopted as an alternative to other high-speed media.
+
+However, it is highly likely that this technology will really start to see some traction, especially from the power companies who will be able to gather data from every device in your house and specifically tell you how much power is being used by your refrigerator, washers and dryers, and especially your computer and televisions, among all the other devices plugged into a wall power outlet.
+
+In the future, BPL will allow you to just plug a computer into a wall power socket and have more than 500 Mbps for up to 1,500 meters.
+
+![image](https://github.com/user-attachments/assets/3782a665-8537-42ca-a5ab-4a57f106a7c0)
+
+This technology can be used to deliver Internet access to the home as well. For a computer (or any other device), you would simply need to plug a BPL modem into any outlet in an equipped building to have high-speed Internet access.
+
+![image](https://github.com/user-attachments/assets/6977c8be-55de-42c0-bc0d-606036627ece)
+
+After the gateway is connected through the coupler to the meter bank for the building, any electrical outlet can be used with the BPL modem to receive the ISP connection to the Internet.
+
+The following challenges still exist:
+
+- The fact that power lines are typically noisy.
+- 
+- The frequency at which the information is transmitted is used by shortwave, and the unshielded power lines can act as antennas, thereby interfering with shortwave communications.
+
+#
+
+### Ethernet over HDMI
+
+HDMI Ethernet Channel technology consolidates video, audio, and data streams into a single HDMI cable, combining the signal quality of HDMI connectivity with the power and flexibility of home entertainment networking
+
+![image](https://github.com/user-attachments/assets/681ce056-bf70-4baf-8da0-2af4cf71ef5d)
+
+It incorporates a dedicated data channel into the HDMI link, enabling high-speed, bidirectional networking at up to 100 Mbps.
+
+### Bidirectional Wavelength-Division Multiplexing (WDM)
+
+Modern optical networks can support multiple optical wavelengths down a single fiber-optical cable. This reduces the number of fiber cables required to interconnect locations.
+
+By implementing wavelength-division multiplexing, optical networks can support multiple optical wavelengths down a single fiber-optical cable.
+
+Optical multiplexing is used in carrier and service provider networks to maximize the use of buried fiber. (WDM) is a technology that multiplexes a number of optical carrier signals onto a single optical fiber by using different wavelengths (i.e., colors) of laser light.
+
+### Course Wavelength-Division Multiplexing (CWDM)
+
+CWDM allows up to 18 channels to be transported over a single dark fiber. Wavelengths are commonly 1310 nm and 1550 nm. CWDM can support distances of up to 70 km.
+
+### Dense Wavelength-Division Multiplexing (DWDM)
+
+With DWDM, more than 80 individual wavelengths can share a single fiber. 
+
+DWDM can handle higher speeds than CWDM, with up to 400 Gbps per channel. Each channel is 0.8 nm apart instead of the 20 nm you would find in a CWDM system. 
+
+Dense wavelength-division multiplexing is a very similar technology to CWDM but has a higher channel capacity. It can also be amplified to support much longer distances than CWDM but with DWDM achieving 1000 m using amplification.
