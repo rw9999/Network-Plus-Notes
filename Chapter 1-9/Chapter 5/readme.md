@@ -34,3 +34,13 @@ The first LED you should verify is the link LED because if it’s not illuminate
 
 ### Hub
 
+A hub is the device that connects all the segments of the network together in a star topology Ethernet network.
+
+As a hub has no intelligence, it is a layer 1 device. Each device in the network connects directly to the hub through a single cable and is used to connect multiple devices without segmenting a network.
+
+Any transmission received on one port will be sent out to all the other ports in the hub, including the receiving pair for the transmitting device, so that Carrier Sense Multiple Access with Collision Detection (CSMA/CD) on the transmitter can monitor for collisions.
+
+So, basically, this means that if one station sends a broadcast, all the others will receive it; yet based on the addressing found in the frame, only the intended recipient will actually listen and process it.
+
+This arrangement simulates the physical bus that the CSMA/CD standard was based on, and it’s why we call the use of a hub in an Ethernet environment a physical star/logical bus topology.
+
