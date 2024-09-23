@@ -44,3 +44,72 @@ So, basically, this means that if one station sends a broadcast, all the others 
 
 This arrangement simulates the physical bus that the CSMA/CD standard was based on, and it’s why we call the use of a hub in an Ethernet environment a physical star/logical bus topology.
 
+![image](https://github.com/user-attachments/assets/eb3e2b30-285b-4405-b5ce-5fe523b6a2ea)
+
+A typical hub you might find it employed within a small network. Since there are only two users, there isn’t a problem in using a hub here. However, if there were 20 users, everyone would see Bob’s request to send a packet to Sally. Most of the time, hubs really aren’t recommended for corporate networks because of their limitations.
+
+It’s important to note that hubs are nothing more than glorified repeaters that are incapable of recognizing frames and data structures—the reason they act with such a lack of intelligence.
+
+A broadcast sent out by any device on the hub will be propagated to all devices connected to it. And just as in a physical bus topology configuration, any two or more of those connected devices have the potential of causing a collision with each other, which means that this hardware device will create a LAN with the most network traffic collisions. Hubs are not suggested for use in today’s corporate network for this reason.
+
+#
+
+### Bridge
+
+A bridge—specifically, a transparent bridge—is a network device that connects two similar network segments together.
+
+Its primary function is to keep traffic separated on either side of the bridge, breaking up collision domains.
+
+![image](https://github.com/user-attachments/assets/2c218413-1dbc-4c72-8fe2-61262f245a58)
+
+What we can see here is that traffic is allowed to pass through the bridge only if the transmission is intended for a station on the opposite side.
+
+The main reasons you would place a bridge in your network would be to connect two segments together or to divide a busy network into two segments. As bridges use MAC addresses to make forwarding decisions, they are considered layer 2 devices.
+
+Bridges are software based, so, interestingly, you can think of a switch as a hardware-based, multiport bridge..
+
+In fact, the terms bridge and switch are often used interchangeably because the two devices used basically the same bridging technologies. The past tense is there for a reason—you’d be hard-pressed to buy a bridge today.
+
+#
+
+### Switch
+
+Switches connect multiple segments of a network together much like hubs do, but with three significant differences—a switch recognizes frames and pays attention to the source and destination MAC address of the incoming frame as well as the port on which it was received.
+
+A switch makes each of its ports a unique, singular collision domain. Hubs don’t do those things. They simply send anything they receive on one port out to all the others.
+
+As switches use MAC addresses to make forwarding decisions, they are considered layer 2 devices.
+
+So, if a switch determines that a frame’s final destination happens to be on a segment that’s connected via a different port than the one on which the frame was received, the switch will only forward the frame out from the specific port on which its destination is located.
+
+If the switch can’t figure out the location of the frame’s destination, it will flood the frame out of every port except the one on which the frame port was received.
+
+![image](https://github.com/user-attachments/assets/4af6ecd0-ed73-4a6a-802a-10b382241fcc)
+
+It looks a lot like a hub. However, switches can come in very large, expensive sizes. Switches that can perform the basic switching process and do not allow you to configure more advanced features—like adding an IP address for telnetting to the device or adding VLANs—are called unmanaged switches.
+
+Others, like Cisco switches that do allow an IP address to be configured for management with such applications as simple network management protocol (SNMP) and do allow special ports to be configured (as in VoIP), are called managed switches.
+
+Switches are layer 2 devices, which means they segment the network with MAC addresses. If you see the term layer 3 switch, that means you are talking about a router, not a layer 2 switch. The terms router and layer 3 switch are interchangeable.
+
+#
+
+### Router
+
+A router is a network device used to connect many, sometimes disparate, network segments together, combining them into what we call an internetwork.
+
+A well-configured router can make intelligent decisions about the best way to get network data to its destination. It gathers the information it needs to make these decisions based on a network’s particular performance data. As routers use IP addresses to make forwarding decisions, they are considered layer 3 devices.
+
+![image](https://github.com/user-attachments/assets/c28def12-a9da-4123-8d38-3bba1506e3ed)
+
+A small office, home office (SOHO) router that provides wired and wireless access for hosts and connects them to the Internet without any necessary configuration.
+
+Routers can be multifaceted devices that behave like computers unto themselves with their own complex operating systems—for example, Cisco’s IOS. You can even think of them as CPUs that are totally dedicated to the process of routing packets. And due to their complexity and flexibility, you can configure them to actually perform the functions of other types of network devices (like firewalls, for example) by simply implementing a specific feature within the router’s software.
+
+Routers can have many different names: layer 3 switch and multilayer switch are the most common, besides the name router, of course. Remember, if you hear just the word switch, that means a layer 2 device. Routers, layer 3 switches, and multilayer switches are all layer 3 devices.
+
+#
+
+### Interface Configurations
+
+
