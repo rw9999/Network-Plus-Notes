@@ -167,5 +167,47 @@ The next configuration and/or troubleshooting spot you may need to consider is t
 
 This is set to auto, but you may want to force the port to be 1000 and full-duplex. Typically, the NIC will run this without a problem and you’ll be sure you’re getting the most bang for your buck on your switch port.
 
-Let’s take a look at a router interface. We’re pretty much going to configure (or not configure) the same parameters.
+Let’s take a look at a router interface. We’re pretty much going to configure (or not configure) the same parameters. However, you should be very aware that a router interface and a switch interface perform different functions.
+
+A router interface will break up collision domains just as a switch interface does, but the purpose of a router interface is to create and maintain broadcast domains and connectivity of WAN services.
+
+Basic layer 2 switches cannot provide these services. 
+
+You must have a layer 3 design before you can implement a router, meaning you must have your subnet design laid out on your network diagram, and your IP addressing scheme must be completely understood. You cannot start configuring router interfaces randomly; there must be a design and it needs to be correct. Unlike switches, router interfaces do not just work when you plug them into the network—they must be configured and enabled. All ports are shut down by default, and why shouldn’t they be? Unless you have a network design and understand IP addressing, what good is a router to your network?
+
+Let’s take a look:
+
+    Router(config-if)#duplex ?
+        auto    Enable AUTO duplex configuration
+        full    Force full duplex operation
+        half    Force half-duplex operation
+    Router(config-if)#speed ?
+        10     Force 10 Mbps operation
+        100    Force 100 Mbps operation
+        1000   Force 1000 Mbps operation
+        auto   Enable AUTO speed configuration
+    Router(config-if)#ip address ?
+        A.B.C.D  IP address
+        dhcp     IP Address negotiated via DHCP
+        pool     IP Address autoconfigured from a local DHCP pool
+
+First, we can see that the basics are there, duplex and speed, but also, to make a router interface useful at all we must add an IP address.
+
+Notice that the options allow you to configure a specific IP address or allow the interface to receive the address from a DHCP server. You would only use this option if you had an IP address reservation for the router interface on your DHCP server because having your router get a random IP address from a DHCP server would be hard to manage.
+
+Let’s finish the basics:
+
+    Router(config-if)#ip address 1.1.1.1 255.0.0.0
+    Router(config-if)#no shutdown
+    Router(config-if)#
+    *Oct 5 17:26:46.522: %LINK-3-UPDOWN:Interface FastEthernet0/0,
+    changed state to up
+    *Oct 5 17:26:47.522: %LINEPROTO-5-UPDOWN: Line protocol on
+    Interface FastEthernet0/0, changed state to up
+
+The interface can now be connected to a layer 2 switch and the hosts connected to the same broadcast domain must set their default gateway address to 1.1.1.1, they can now send packets to the router.
+
+#
+
+### Firewall
 
