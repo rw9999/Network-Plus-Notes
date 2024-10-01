@@ -112,4 +112,60 @@ Routers can have many different names: layer 3 switch and multilayer switch are 
 
 ### Interface Configurations
 
+When configuring interfaces on a router or switch, unless you’re doing complex configurations such as connecting up a Voice over IP (VoIP) network, the interface configurations are pretty straightforward.
+
+There is a major difference between a router interface and a switch interface configuration, however.
+
+On a switch, you do not add an IP address since they only read to layer 2, and most of the time, you never even need to configure a switch interface.
+
+First, they are enabled by default, and second, they are very good at auto-detecting the speed, duplex, and, in newer switches, even the Ethernet cable type (crossover or straight-through).
+
+A router is much different and an IP address is expected on each interface; they are not enabled by default, and a good layer 3 network design must be considered before installing a router.
+
+Let’s start by taking a look at a basic Cisco switch configuration. First, notice by the output shown that there is no configuration on the interfaces, yet you can plug this switch into your network and it would work.
+
+This is because all ports are enabled and there are some very basic configurations that allow the switch to run without any configuration—they can be considered plug-and- play in a small or home network:
+    
+    Switch#sh running-config
+    [Some output cut for brevity] 
+    !
+    interface FastEthernet0/1
+    !
+    interface FastEthernet0/2
+    !
+    interface FastEthernet0/3
+    !
+    interface FastEthernet0/4
+    !
+    interface FastEthernet0/5
+    !
+    interface FastEthernet0/6
+    !
+    interface FastEthernet0/7
+    !
+    interface FastEthernet0/8
+    !
+
+Let’s take a look at a configuration of a simple switch interface. First, we’ll notice the duplex options:
+
+    Switch(config-if)# duplex ?
+      auto Enable AUTO duplex configuration
+      full Force full duplex operation
+      half Force half-duplex operation
+
+All switch ports are set to duplex auto by default, and usually you can just leave this configuration alone.
+
+However, be aware that if your network interface card is set to half-duplex and the switch port is configured for full-duplex, the port will receive errors and you’ll eventually get a call from the user. This is why it is advised to just leave the defaults on your hosts and switch ports, but it is a troubleshooting spot to check when a problem is reported from a single user.
+
+The next configuration and/or troubleshooting spot you may need to consider is the speed of the port:
+
+    Switch(config-if)#speed ?
+    10     Force 10 Mbps operation
+    100    Force 100 Mbps operation
+    1000   Force 1000 Mbps operation
+    auto   Enable AUTO speed configuration
+
+This is set to auto, but you may want to force the port to be 1000 and full-duplex. Typically, the NIC will run this without a problem and you’ll be sure you’re getting the most bang for your buck on your switch port.
+
+Let’s take a look at a router interface. We’re pretty much going to configure (or not configure) the same parameters.
 
